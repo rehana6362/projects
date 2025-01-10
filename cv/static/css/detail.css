@@ -1,0 +1,359 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', serif;
+    background-color: #f4f4f4;
+    margin-left: 20px;
+}
+
+
+
+.profile-container,.Secondpage,.thirdpage,.fourthpage {
+    width: 900px;
+    margin: 20px auto;
+    background-color:white;
+    /* padding: 20px; */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-left: 40px;
+}
+
+.main-footer {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 60px; 
+  padding: 10px;
+  line-height: 1;
+  position: absolute;
+  color: blue;
+  right: 10px;
+  bottom: 2px;
+  text-align: right;
+  
+}
+
+.main-footer a {
+  color: blue; /* Default link blue color */
+  text-decoration: underline;
+}
+
+.main-footer a:hover {
+  color: #FF4500; /* Change link color on hover */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.header img{
+    height: 100px;
+    width: 150px;
+   
+}
+.company-logo {
+    width: 150px;
+    height: auto;
+}
+
+.profile-container,.Secondpage,.thirdpage,.fourthpage{
+  position: relative;
+  min-height: 100vh;
+  padding: 20px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+.candidate-name {
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin: auto;
+    padding-top: 150px;
+    padding-right: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.profile-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right;
+  padding-right: 60px;
+  padding-top: 130px;
+  
+
+
+}
+
+.career-summary {
+    margin-bottom: 20px;
+    /* padding-left: 50px;
+    padding-right: 50px; */
+}
+
+.career-summary h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.career-summary p {
+    font-weight: lighter;
+    font-size: 16px;
+    line-height: 1.6;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.candidate-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+
+.personal-info h2{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+
+}
+.personal-info p{
+    font-weight: lighter;
+    font-size: medium;
+    line-height: 1.6;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+}
+
+
+
+.education p{
+    font-weight: lighter;
+    font-size: medium;
+    line-height: 0.2;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+}
+.education h2{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.note{
+    color: red;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+.education .note strong{
+    margin-top: 10px;
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+
+  
+
+.add h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.add {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+.add p{
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  text-align: left;
+  margin-bottom: 20px;
+}
+  
+.logo {
+  width: 120px; /* Adjust width as necessary */
+}
+
+#ai2{
+    margin-left: 40%;
+    margin-top: -30px;
+}
+
+
+
+.content h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 10px;
+}
+  
+.skills-list {
+  list-style-type: disc;
+  margin-left: 20px;
+  line-height: 1.6;
+  color: #333;
+}
+  
+.skills-list li {
+  margin: 8px 0;
+  color: black;
+  font-size: 14px;
+  list-style-type: disc;
+  line-height: 1.6;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.Secondpage h2{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.work h2{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.work strong{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    
+    
+}
+.work p{
+    line-height: 0.4;
+}
+.work ul{
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 40px;
+}
+.work ul li{
+    line-height: 1.6;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+.work ul li::marker{
+    color: black;
+    font-size: 1.3em;
+}
+
+.self h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.project h3,p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    
+    
+}   
+
+.project li{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: black;
+    padding-left: 40px;
+    list-style-type: disc;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.project li::marker{
+    color:black;
+    font-size: 1.5em;
+    padding-right: 30px;
+}
+.project ul{
+    padding-left: 60px;
+}
+.thirdpage h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.thirdpage ul{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: lighter;
+    margin-bottom: 10px;
+    padding-left: 40px;
+
+}
+.thirdpage ul li{
+    padding-left: 20px;
+    list-style-type: disc;
+
+}
+.thirdpage ul li::marker{
+    font-size: 1.2em;
+    color: black;
+}
+.reason h3 b{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+
+}
+.reason h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: lighter;
+    padding-right: 20px;
+    
+}
+.one p{
+    line-height: 0.2;
+
+}
+.one ul{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    font-size: 16px;
+    padding-left: 40px;
+    line-height: 1.6;
+
+
+
+}
+.one ul li{
+    list-style-type: disc;
+}
+.one ul li::marker{
+    font-size: 1.2em;
+    color: black;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ candidate.candidate_name }}'s Details</title>
+</head>
+<body>
+    <h1>{{ candidate.candidate_name }}</h1>
+
+    <img src="{{ candidate.company_logo.url }}" alt="Company Logo" style="width: 100px;">
+    <img src="{{ candidate.candidate_image.url }}" alt="Candidate Image" style="width: 150px;">
+
+    <h2>Career Summary</h2>
+    <p>{{ candidate.careersummary }}</p>
+
+    <h2>Education</h2>
+    <p>{{ candidate.education }}</p>
+
+    <h2>Self Project</h2>
+    <p>{{ candidate.self_project }}</p>
+
+    <h3>Personal Information</h3>
+    <ul>
+        {% for info in personal_info %}
+        <li>Age: {{ info.age }}</li>
+        <li>Gender: {{ info.gender }}</li>
+        <li>Nationality: {{ info.nationality }}</li>
+        <li>Status: {{ info.status }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Additional Information</h3>
+    <ul>
+        {% for info in additional_info %}
+        <li>Skill: {{ info.skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Work Experience</h3>
+    <ul>
+        {% for experience in work_experience %}
+        <li>
+            <strong>{{ experience.position }}</strong> at {{ experience.company }} ({{ experience.period }})
+            <p>Responsibilities: {{ experience.responsibilities }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
