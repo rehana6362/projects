@@ -1,0 +1,64 @@
+body {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    padding-top: 80px;
+}
+/* Container styling */
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    height: 450px;
+}
+
+/* General input control styling */
+.input-control {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.input-control label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Input box styling */
+.input-control input {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Error message styling */
+.input-control .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Success state: green border */
+.input-control.success input {
+    border-color: green;
+}
+
+/* Error state: red border */
+.input-control.error input {
+    border-color: red;
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
