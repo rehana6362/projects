@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Employees</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #d9e4f5, #f9f9f9);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #132e47;
+            margin-bottom: 20px;
+        }
+
+        .employee-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .employee-card {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .employee-card h3 {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .employee-card p {
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .employee-card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #132e47;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .employee-card a:hover {
+            background-color: #132e47;
+        }
+
+        /* Button Container */
+.btn-container {
+    text-align: center; /* Center the button container */
+    margin-top: 30px;    /* Add space above the button */
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 12px 25px; /* Adjust padding for better clickability */
+    font-size: 1rem;    /* Standard font size */
+    font-weight: 600;    /* Slightly bold font */
+    text-decoration: none;
+    text-transform: uppercase; /* Uppercase text for emphasis */
+    background: linear-gradient(135deg, #6a89cc, #132e47);
+    color: #fff; /* White text */
+    /* border: 2px solid #132e47;  */
+    border-radius: 50px; /* Rounded edges for a modern look */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Hover Effect */
+.btn:hover {
+    background-color: #132e47; /* Slightly darker green on hover */
+    border-color: #132e47; /* Border matches the hover color */
+    color: #fff; /* Keep text white */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Focus Effect for Accessibility */
+.btn:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(72, 155, 49, 0.7); /* Green outline for focus */
+}
+
+/* Active State for Button */
+.btn:active {
+    transform: translateY(1px); /* Slight downward press effect */
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>All Employees</h1>
+        <div class="employee-list">
+            {% for employee in employees %}
+            <div class="employee-card">
+                <h3>{{ employee.name }}</h3>
+                <p>Department: {{ employee.department }}</p>
+                <p>Email: {{ employee.email }}</p>
+                <a href="{% url 'employee_detail' employee.employee_id %}">View Profile</a>
+            </div>
+            {% empty %}
+            <p>No employees found.</p>
+            {% endfor %}
+        </div>
+
+        <!-- <div class="btn-container">
+            <a href="{% url 'employee_list' %}" class="btn">Back To Dashboard</a>
+        </div> -->
+
+    </div>
+
+    <div class="btn-container">
+        <a href="{% url 'employee_list' %}" class="btn">Back To Dashboard</a>
+    </div>
+</body>
+</html>

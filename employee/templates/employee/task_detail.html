@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ task.title }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(120deg, #d9e4f5, #f9f9f9);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #132e47;
+            font-size: 2.5rem;
+            margin-top: 40px;
+            font-weight: 600;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Task Details */
+        .task-details {
+            margin-bottom: 40px;
+        }
+
+        .task-details p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .task-details strong {
+            color: #132e47;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+            animation: fadeIn 1s ease;
+        }
+
+        .action-buttons a {
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 14px 25px;
+            color: #fff;
+            background-color: #132e47;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            width: 150px;
+        }
+
+        .action-buttons a:hover {
+            background-color: #132e47;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .action-buttons .delete {
+            background-color: #f44336;
+        }
+
+        .action-buttons .delete:hover {
+            background-color: #d32f2f;
+        }
+
+        /* Back Link */
+        .back-link {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .back-link a {
+            font-size: 1.1rem;
+            color: #132e47;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 12px 20px;
+            border: 2px solid #132e47;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link a:hover {
+            color: #fff;
+            background-color: #132e47;
+            border-color: #132e47;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .action-buttons a {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .back-link a {
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ task.title }}</h1>
+        
+        <div class="task-details">
+            <p><strong>Description:</strong> {{ task.description }}</p>
+            <p><strong>Due Date:</strong> {{ task.due_date }}</p>
+            <p><strong>Status:</strong> {{ task.status }}</p>
+            <p><strong>Assigned to:</strong> {{ task.employee.name }}</p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <a href="{% url 'update_task' task.task_id %}">Update Task</a>
+            <a href="{% url 'delete_task' task.task_id %}" class="delete">Delete Task</a>
+        </div>
+
+        <!-- Back Link -->
+        <div class="back-link">
+            <a href="{% url 'all_tasks' %}">Back to Tasks List</a>
+        </div>
+    </div>
+</body>
+</html>

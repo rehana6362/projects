@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Summary</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #d9e4f5, #f9f9f9);
+            color: #fff; /* White text color for better contrast */
+        }
+
+        h1 {
+            text-align: center;
+            color: #132e47; /* Green for heading */
+            margin-top: 30px;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        /* Table Styles */
+        table {
+            width: 85%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 14px 20px;
+            text-align: left;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        th {
+            background-color: #132e47; /* Green header */
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f9f1;
+            transform: translateY(-2px);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        td ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        td ul li {
+            margin: 8px 0;
+            font-size: 0.95rem;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+
+        td ul li:hover {
+            color: #132e47;
+        }
+
+        td ul li span {
+            font-weight: bold;
+            color: #132e47;
+        }
+
+        /* Status Styles */
+        /* Status Styles */
+.status-completed {
+    background: linear-gradient(135deg, #1dd01f, #16e716); /* Gradient green for completed status */
+    color: #fff; /* White text for contrast */
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 20px; /* Rounded edges for a professional button look */
+    text-align: center;
+    display: inline-block; /* Makes the status appear like a button */
+    font-size: 0.9rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+.status-completed:hover {
+    background: linear-gradient(135deg, #16e716, #12c512); /* Slightly darker green on hover */
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.status-pending {
+    background: linear-gradient(135deg, #f55442, #f44336); /* Gradient red for pending status */
+    color: #fff; /* White text for contrast */
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 20px; /* Rounded edges for a professional button look */
+    text-align: center;
+    display: inline-block; /* Makes the status appear like a button */
+    font-size: 0.9rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+.status-pending:hover {
+    background: linear-gradient(135deg, #f44336, #e53935); /* Slightly darker red on hover */
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+
+        /* Table Header Effect */
+        th:hover {
+            background-color: #132e47; /* Darker green when hovered */
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            table {
+                width: 95%;
+            }
+
+            th, td {
+                font-size: 0.9rem;
+                padding: 10px 15px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Button Style for Export */
+        .export-btn {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 12px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #6a89cc, #132e47);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .export-btn:hover {
+            background-color: #132e47; 
+            transform: translateY(-3px);
+        }
+
+        .export-btn:active {
+            transform: translateY(2px); /* Button press effect */
+        }
+    </style>
+</head>
+<body>
+    <h1>Performance Summary</h1>
+    <table>
+        <tr>
+            <th>Employee</th>
+            <th>Total Records</th>
+            <th>Average Records</th>
+            <th>Metrics</th>
+            <th>Status</th> <!-- Added Status Column -->
+        </tr>
+        {% for data in summary %}
+            <tr>
+                <td>{{ data.employee.name }}</td>
+                <td>{{ data.total_records }}</td>
+                <td>{{ data.avg_records }}</td>
+                <td>
+                    <ul>
+                        {% for metric in data.metrics %}
+                            <li>
+                                <span>{{ metric.time_interval }}</span>: 
+                                {{ metric.total_records }} 
+                                (Target: {{ metric.target }})
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td>
+                    <!-- Conditional Status Display -->
+                    {% if data.status == 'Completed' %}
+                        <span class="status-completed">Completed</span>
+                    {% else %}
+                        <span class="status-pending">Pending</span>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <!-- Export Button (for demonstration) -->
+    <a href="#" class="export-btn">Export Summary</a>
+</body>
+</html>
