@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Poll</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="poll-container">
+        <h2>Which is your favorite programming language?</h2>
+        <div class="poll-option">
+            <input type="radio" name="poll" id="option1" value="JavaScript">
+            <label for="option1">JavaScript</label>
+        </div>
+        <div class="poll-option">
+            <input type="radio" name="poll" id="option2" value="Python">
+            <label for="option2">Python</label>
+        </div>
+        <div class="poll-option">
+            <input type="radio" name="poll" id="option3" value="Java">
+            <label for="option3">Java</label>
+        </div>
+        <div class="poll-option">
+            <input type="radio" name="poll" id="option4" value="Cpp">
+            <label for="option4">C++</label>
+        </div>
+        <button id="submit-btn">Submit Vote</button>
+    </div>
+
+    <div class="result-container">
+        <h2>Results:</h2>
+        <div id="results">
+            <p>JavaScript: <span id="js-votes">0</span> votes</p>
+            <p>Python: <span id="python-votes">0</span> votes</p>
+            <p>Java: <span id="java-votes">0</span> votes</p>
+            <p>C++: <span id="cpp-votes">0</span> votes</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
